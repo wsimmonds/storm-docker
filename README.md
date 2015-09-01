@@ -1,3 +1,6 @@
+##Fork notes
+This is a fork from [storm-docker](https://github.com/viki-org/storm-docker) - at present the only change is that it runs Storm 0.9.5 instead of 0.9.2-incubating.
+
 storm-docker
 ============
 
