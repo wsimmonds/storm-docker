@@ -7,12 +7,12 @@ RUN apt-get update
 RUN apt-get install -y unzip openjdk-6-jdk wget supervisor python-dev python-pip
 RUN pip install PyYAML==3.11
 
-RUN wget -q -N http://mirrors.gigenet.com/apache/storm/apache-storm-0.9.2-incubating/apache-storm-0.9.2-incubating.zip
-RUN unzip -o /apache-storm-0.9.2-incubating.zip -d /usr/share/
-RUN rm /apache-storm-0.9.2-incubating.zip
+RUN wget -q -N http://mirror.ox.ac.uk/sites/rsync.apache.org/storm/apache-storm-0.9.5/apache-storm-0.9.5.zip
+RUN unzip -o /apache-storm-0.9.5 -d /usr/share/
+RUN rm /apache-storm-0.9.5.zip
 
-ENV STORM_HOME /usr/share/apache-storm-0.9.2-incubating
-RUN echo "STORM_HOME=/usr/share/apache-storm-0.9.2-incubating" | tee -a /etc/environment
+ENV STORM_HOME /usr/share/apache-storm-0.9.5
+RUN echo "STORM_HOME=/usr/share/apache-storm-0.9.5" | tee -a /etc/environment
 
 RUN groupadd storm
 RUN useradd --gid storm --home-dir /home/storm --create-home --shell /bin/bash storm
